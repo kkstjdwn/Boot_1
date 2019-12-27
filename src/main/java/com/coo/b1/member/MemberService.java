@@ -12,4 +12,8 @@ public class MemberService {
 	public int memberSingUp(MemberVO memberVO) throws Exception{
 		return mapper.memberSignUp(memberVO);
 	}
+	
+	public MemberVO memberSingIn(MemberVO memberVO) throws Exception{
+		return mapper.memberSignIn(memberVO);
+	}
 }

@@ -14,7 +14,9 @@ public class MemberController {
 	
 	@GetMapping("memberSignUp")
 	public String memberSignUp(MemberVO memberVO) throws Exception{
-	
+		memberVO.setPw("coo");
+		memberVO.setId("coo");
+		service.memberSingIn(memberVO);
 		return "member/memberSignUp";
 	}
 }

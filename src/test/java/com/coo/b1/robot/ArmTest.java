@@ -15,23 +15,8 @@ import com.coo.head.Header;
 @SpringBootTest
 class ArmTest {
 	
-	@Autowired
-	@Qualifier("la")
-	private Arm arm1;
-	
-	@Autowired
-	private Header header;
-	
-
-//	//@Autowired
-//	@Resource(name = "rightArm")
-//	private Arm arm2;
-	
-
 	@Test
 	void test() {
-		assertNotNull(header);
-//		assertNotNull(arm2);
 
 	}
 
