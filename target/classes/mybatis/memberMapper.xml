@@ -11,5 +11,11 @@
   <select id="memberSignIn" parameterType="com.coo.b1.member.MemberVO" resultType="com.coo.b1.member.MemberVO">
   	select * from members where id = #{id} and pw = #{pw}
   </select>
+  
+  <select id="idCheck" parameterType="com.coo.b1.member.MemberVO" resultType="java.lang.String">
+  	
+  	select id from members where id=#{id}
+  
+  </select>
   	
   </mapper>

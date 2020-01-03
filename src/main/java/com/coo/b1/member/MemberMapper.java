@@ -9,4 +9,6 @@ public interface MemberMapper {
 	public int memberSignUp(MemberVO memberVO) throws Exception; 
 	
 	public MemberVO memberSignIn(MemberVO memberVO) throws Exception;
+	
+	public String idCheck(MemberVO memberVO) throws Exception;
 }
