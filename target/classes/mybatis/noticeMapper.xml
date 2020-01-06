@@ -21,4 +21,51 @@
 		</foreach>
 	</insert>
   	
+  	<sql id="search">
+  		<choose>
+  			<when test="kind == 'tt'">
+  				where title like CONCAT('%',#{search},'%') 
+  			</when>
+  			<when test="kind == 'wt'">
+  				where writer like CONCAT('%',#{search},'%') 
+  			</when>
+  			<otherwise>
+  				where contents like CONCAT('%',#{search},'%') 
+  			</otherwise>
+  		</choose>
+  	</sql>
+  	
+  	<select id="noticeList" resultType="noticeVO" parameterType="SqlPager">
+  		select * from notice 
+  		where num > 0 
+  		order by num desc limit #{startRow} ,#{perPage} 
+  	</select>
+  	
+  	<select id="noticeSearch" resultType="noticeVO" parameterType="SqlPager">
+  		select count(num) from notice 
+  		<include refid="search"></include> and num > 0 
+  		order by num desc limit #{startRow} ,#{perPage}
+  	</select>
+  	
+  	<select id="searchCount" resultType="int" parameterType="SqlPager">
+  		select count(num) from notice 
+  		<include refid="search"></include> and num > 0 
+  		order by num desc limit #{startRow} ,#{perPage}
+  	</select>
+  	 
+  	<select id="countList" resultType="int">
+  		select count(num) from notice;
+  	</select>
+  	
+  	
+  	<select id="noticeSelect" parameterType="noticeVO" resultType="noticeVO">
+  		select * from notice where num = #{num}
+  		
+  	</select>
+  	
+  	<select id="getFiles" parameterType="noticeFilesVO" resultType="noticeFilesVO">
+  		select * from noticeFiles where num = #{num}
+  	</select>
+  	
+  	
   </mapper>

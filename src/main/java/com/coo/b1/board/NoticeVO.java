@@ -1,6 +1,7 @@
 package com.coo.b1.board;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -14,6 +15,8 @@ public class NoticeVO {
 	private String contents;
 	private Date regDate;
 	private Integer hit;
+	
+	
 	
 	
 	public Integer getNum() {
@@ -52,6 +55,7 @@ public class NoticeVO {
 	public void setHit(Integer hit) {
 		this.hit = hit;
 	}
+	
 	
 	
 
