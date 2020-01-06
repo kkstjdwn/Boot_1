@@ -21,7 +21,6 @@
 	
 	<h1 style="text-align: center;"> 
 		<spring:message code="hello"></spring:message>
-		<spring:message code="hello2" text="No MSG"></spring:message><br>
 		<c:if test="${!empty member }">
 			<spring:message code="loginMessage" arguments="${member.id }-${member.email }" argumentSeparator="-"></spring:message>
 		</c:if> 

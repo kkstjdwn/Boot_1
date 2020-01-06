@@ -6,7 +6,8 @@
       <a class="navbar-brand" href="#">SPRING BOOT</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="${pageContext.request.contextPath }/">Home</a></li>
+      <li><a href="${pageContext.request.contextPath }/">Home</a></li>
+      <li><a href="${pageContext.request.contextPath }/board/NoticeWrite">Notice</a></li>
       <c:choose>
       	<c:when test="${empty member }">
 			<li><a href="${pageContext.request.contextPath }/member/memberSignUp">SIGN UP</a></li>

@@ -1,0 +1,11 @@
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  	<typeAliases>
+  	
+  		<typeAlias type="com.coo.b1.board.NoticeVO" alias="noticeVO"/>
+  		<typeAlias type="com.coo.b1.board.NoticeFilesVO" alias="noticeFilesVO"/>
+  		<typeAlias type="java.util.List" alias="list"/>
+  	</typeAliases>
+  </configuration>

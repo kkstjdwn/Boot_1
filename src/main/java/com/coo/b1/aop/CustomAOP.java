@@ -14,12 +14,12 @@ public class CustomAOP {
 	
 	@Before("execution(* com.coo.b1.member.MemberService.memberSingIn(..))")
 	public void before() throws Exception{
-		System.out.println("BEFORE");
+		System.out.println("로그인 시도");
 	}
 	
 	@After("execution(* com.coo.b1.member.MemberService.memberSingIn(..))")
 	public void afterReturning() throws Exception{
-		System.out.println("AFTER");
+		System.out.println("로그인 성공");
 	}
 	
 	@AfterThrowing("execution(* com.coo.b1.member.MemberService.memberSignUp(..))")

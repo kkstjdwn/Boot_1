@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.coo.b1.board.BoardInterceptor;
 import com.coo.b1.interceptor.CustomInterceptor;
 import com.coo.b1.member.MemberInterceptor;
 
@@ -15,6 +16,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
 	private CustomInterceptor ci;
 	@Autowired
 	private MemberInterceptor mi;
+	@Autowired
+	private BoardInterceptor bi;
+	
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
@@ -26,6 +30,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
 		
 		registry.addInterceptor(mi).addPathPatterns("/member/*")
 		.excludePathPatterns("/member/memberSign*");
+		
+		registry.addInterceptor(bi).addPathPatterns("/board/*Write");
+		
 		
 		WebMvcConfigurer.super.addInterceptors(registry);
 	}
